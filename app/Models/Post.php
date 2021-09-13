@@ -20,15 +20,15 @@ class Post extends Model
 
     function image()
     {
-        if ($this->image && file_exists(public_path('images/post/' . $this->image)))
-            return asset('images/post/' . $this->image);
+        if ($this->image && file_exists(public_path('public/storage/post/' . $this->image)))
+            return asset('public/storage/post/'.$this->image);
         else
-            return asset('images/no_image.png');
+            return asset('public/storage/post/no_image.png');
     }
 
     function delete_image()
     {
-        if ($this->image && file_exists(public_path('images/post/' . $this->image)))
-            return unlink(public_path('images/post/' . $this->image));
+        if ($this->image && file_exists(public_path('public/storage/post/' . $this->image)))
+            return unlink(public_path('public/storage/post/' . $this->image));
     }
 }

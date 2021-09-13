@@ -35,7 +35,7 @@
                 <td>{{ $row->post_title }}</td>
                 <td>{{ $row->category }}</td>
                 <td>
-                    <img src="{{url('public/post/'.$row->image)}}" height="75" />
+                    <img src="{{ $row->image() }}" height="75" />
                 </td>
                 <td>
                     <a class="btn btn-sm btn-warning" href="{{ route('post.edit', $row) }}">Ubah</a>

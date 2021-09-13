@@ -53,7 +53,7 @@ class PostController extends Controller
         if ($request->hasFile('image')) {
             $image = $request->file('image');
             $name = rand(1000, 9999) . $image->getClientOriginalName();
-            $image->move('public/post', $name);
+            $image->move('public/storage/post', $name);
             $post->image = $name;
         }
         $post->content = $request->content;
@@ -80,7 +80,7 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-          $data['title'] = 'Ubah Post';
+        $data['title'] = 'Ubah Post';
         $data['row'] = $post;
         $data['categories'] = ['Politik', 'Kesehatan', 'Olahraga'];
         return view('post.edit', $data);
